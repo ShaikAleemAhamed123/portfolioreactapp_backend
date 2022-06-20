@@ -50,7 +50,7 @@ User.createIndexes();
 
 app.get("/", (req, resp) => {
 
-    resp.send("App is Working");
+    resp.send("App is Working Fine :)");
     // You can check backend is working or not by 
     // entering http://loacalhost:5000
 
