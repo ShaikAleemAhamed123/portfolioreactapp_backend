@@ -66,14 +66,15 @@ app.post("/register", async (req, resp) => {
             message: req.body.message
         });
         let result = await user.save();
-        result = result.toObject();
-        if (result) {
-            delete result.password;
-            resp.send(user);
-            console.log(result);
-        } else {
-            console.log("User already register");
-        }
+        console.log(result);
+        // result = result.toObject();
+        // if (result) {
+        //     delete result.password;
+        //     resp.send(user);
+        //     console.log(result);
+        // } else {
+        //     console.log("User already register");
+        // }
 
     } catch (e) {
         resp.send("Something Went Wrong  whats going on ? " + e);
