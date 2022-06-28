@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Using Mongoose to connect to MongoDB
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://admin-aleemahamed:Aleem13%40mongodbatlas@cluster0.4ykgt.mongodb.net/", {
+mongoose.connect("mongodb+srv://admin-aleemahamed:Aleem13mongodbatlas@cluster0.4ykgt.mongodb.net/", {
     dbName: 'yourDB-name',
     useNewUrlParser: true,
     useUnifiedTopology: true
