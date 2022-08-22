@@ -153,6 +153,35 @@ app.post("/educations", async (req, resp) => {
     }
 });
 
+app.delete("/educations", async (req, res) => {
+
+    const title = req.query.title;
+    // let resp = await Education.deleteOne({ title: title }, (err, obj) => {
+    //     if (err) {
+    //         console.log("Error while deleting document !");
+    //         res.send("Error while deleting document. --> Error: " + err);
+    //     }
+    //     else {
+    //         console.log("Education Deletion Successfull !");
+    //         res.send("Education " + obj.title + " deleted Successfully !");
+    //     }
+    // });
+
+    let resp = await Education.deleteOne({ title: title }).then(
+        (err, obj) => {
+            if (err) {
+                console.log("Error while deleting document !");
+                res.send("Error while deleting document. --> Error: " + err);
+            }
+            else {
+                console.log("Education Deletion Successfull !");
+                res.send("Education " + obj.title + " deleted Successfully !");
+            }
+        }
+
+    )
+})
+
 
 
 //-------------------------------------------Projects Section ---------------------------------------------------------------------
@@ -226,6 +255,35 @@ app.post("/projects", async (req, resp) => {
         resp.send("Something Went Wrong while adding Project. --> Error: " + e);
     }
 });
+
+app.delete("/projects", async (req, res) => {
+
+    const title = req.query.title;
+    // let resp = await Project.deleteOne({ title: title }, (err, obj) => {
+    //     if (err) {
+    //         console.log("Error while deleting document !");
+    //         res.send("Error while deleting document. --> Error: " + err);
+    //     }
+    //     else {
+    //         console.log("Project Deletion Successfull !");
+    //         res.send("Project " + obj.title + " deleted Successfully !");
+    //     }
+    // });
+
+    let resp = await Project.deleteOne({ title: title }).then(
+        (err, obj) => {
+            if (err) {
+                console.log("Error while deleting document !");
+                res.send("Error while deleting document. --> Error: " + err);
+            }
+            else {
+                console.log("Project Deletion Successfull !");
+                res.send("Project " + obj.title + " deleted Successfully !");
+            }
+        }
+
+    )
+})
 
 //-------------------------------------------  Skills Section ---------------------------------------------------------------------
 
@@ -314,6 +372,36 @@ app.put("/skills", async (req, res) => {
 
     let resp = await Skill.updateOne({ title: oldTitle }, { $set: updateObject });
     res.send("Skill Updated Successfully !")
+})
+
+
+app.delete("/skills", async (req, res) => {
+
+    const title = req.query.title;
+    // let resp = await Skill.deleteOne({ title: title }, (err, obj) => {
+    //     if (err) {
+    //         console.log("Error while deleting document !");
+    //         res.send("Error while deleting document. --> Error: " + err);
+    //     }
+    //     else {
+    //         console.log("Skill Deletion Successfull !");
+    //         res.send("Skill " + obj.title + " deleted Successfully !");
+    //     }
+    // });
+
+    let resp = await Skill.deleteOne({ title: title }).then(
+        (err, obj) => {
+            if (err) {
+                console.log("Error while deleting document !");
+                res.send("Error while deleting document. --> Error: " + err);
+            }
+            else {
+                console.log("Skill Deletion Successfull !");
+                res.send("Skill " + obj.title + " deleted Successfully !");
+            }
+        }
+
+    )
 })
 
 //-------------------------------------------  Experience Section ---------------------------------------------------------------------
@@ -413,6 +501,35 @@ app.put("/experiences", async (req, res) => {
 
     let resp = await Experience.updateOne({ title: oldTitle }, { $set: updateObject });
     res.send("Experience Updated Successfully !")
+})
+
+app.delete("/experiences", async (req, res) => {
+
+    const title = req.query.title;
+    // let resp = await Experience.deleteOne({ title: title }, (err, obj) => {
+    //     if (err) {
+    //         console.log("Error while deleting document !");
+    //         res.send("Error while deleting document. --> Error: " + err);
+    //     }
+    //     else {
+    //         console.log("Experience Deletion Successfull !");
+    //         res.send("Experience " + obj.title + " deleted Successfully !");
+    //     }
+    // });
+
+    let resp = await Experience.deleteOne({ title: title }).then(
+        (err, obj) => {
+            if (err) {
+                console.log("Error while deleting document !");
+                res.send("Error while deleting document. --> Error: " + err);
+            }
+            else {
+                console.log("Experience Deletion Successfull !");
+                res.send("Experience " + obj.title + " deleted Successfully !");
+            }
+        }
+
+    )
 })
 
 
